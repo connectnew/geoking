@@ -1,0 +1,13 @@
+<template>
+	<svg 
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="0.651cm" height="0.651cm">
+	<image  x="0px" y="0px" width="21px" height="21px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAMAAACeyVWkAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABPlBMVEXiqA3////iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3iqA3///9gkx7PAAAAaHRSTlMAADOLyfLuunofB4/98/Vxs4UkChc8m9ooBWtF7Vww+/El4qJK/uQSjQPluxarV8xuEPSMoDbB7xU5vr04YJJ7nEwd8PlDY9YIb01EiqlbO2S5aqxUX+DRSZ/2WJi/vJAJrk4BVffT3JC8URkAAAABYktHRAH/Ai3eAAAAB3RJTUUH4wkFEzAzGDwbAwAAAPxJREFUGNNl0GdbwjAUhuEDaJViq4iMKlIVEBDEPVAUtxj3BOpG0ff//wJTkpZLeL4k506+JEQ8r6+vXxkY9Nt7jx1f1cAQoOmAMtxRdQRacDQ0Fo4APlcDiMaMcT7TRByTUhPm1HRsRksanFPp2YzQLIK5uXyB2s2jKHQh7V80lwRSERGhy5q6siqR1rAudEPfNHKOlrAldBtlctvBrtAK9jqax77Qg8OjYwdPcFqVrziDwiSaOHf/4QK4vCpf39wCd3T/IJUen9CuVqcGLCaVMs8vr2/v7IM++ZnVlOr09W1xbrH/SsRsturUzS3O0W6lJr+t96gn9RP//QMUwC8OFSQXhwAAAABJRU5ErkJggg==" />
+</svg>
+</template>
+<script>
+	export default {
+		name: 'IconSearch'
+	}
+</script>

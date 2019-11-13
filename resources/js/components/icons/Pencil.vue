@@ -1,0 +1,13 @@
+<template>
+	<svg 
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="0.635cm" height="0.564cm">
+	<image  x="0px" y="0px" width="18px" height="16px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAQCAMAAAAs2N9uAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABWVBMVEULkcL///8LkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcILkcL///9liwekAAAAcXRSTlMAALXd9Pn3+Pq6LShgMefr5ejq2oUaN4qHq1ZLUVMmhJGt/fVaAgjZWBz8aJ/AHaP+sy8BJKeoHjis+50sSRQSm5YWorA9jZc0xAupRj7TvyINod9iBjDSXQQHDAMlzMGqT0RDQEdFffK96eb2F/GIEUgX+K4AAAABYktHRAH/Ai3eAAAAB3RJTUUH4wkFEygbr5IroAAAAOVJREFUGNNjYGJmYWUDA3YOdk4ubh5eBr7CQn4BQRAQ4hcWERUTl2AoLJSUkpYBAVkZXjkeeQVFBiVlFVUGKFATL1TX0GTQYtVWg4qI6igV6ooxIgnp6RsUGhoZIwmZmGoVmpkzGBvDhSwsrQqtNW1s7eCq7B0K2R2d1JxdTKBCqnKubsLu5gwewp4wIS9vHR9fOwYGXj//AKhQYFBwSChQe1g4SEhJOSKSgSEqOgZkR2xcPFCosDAhMUk6OSVVWto2LT0jEyiUBfZ2Nh+foCBfdk6hWS4jQ6ZADmsOFLDl5OUXMAIAH30u3irWa7UAAAAASUVORK5CYII=" />
+</svg>
+</template>
+<script>
+	export default {
+		name: 'IconPencil',
+	}
+</script>

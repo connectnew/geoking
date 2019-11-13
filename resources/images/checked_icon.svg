@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#5BE319;}
+</style>
+<rect x="61" y="113" class="st0" width="388" height="277"/>
+<g>
+	<g>
+		<g id="check-circle">
+			<path class="st1" d="M256,0C115.2,0,0,115.2,0,256s115.2,256,256,256s256-115.2,256-256S396.8,0,256,0z M204.8,384l-128-128
+				l35.8-35.8l92.2,92.2l194.6-194.6l35.8,35.8L204.8,384z"/>
+		</g>
+	</g>
+</g>
+</svg>

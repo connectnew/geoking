@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+
+  php:
+    build:
+      context: docker/php
+    image: laravel_php
+    links:
+      - db
+    depends_on:
+      - db
+    container_name: laravel_php
+    environment:
+      XDEBUG_CONFIG: "remote_host=host.docker.internal"
+      PHP_IDE_CONFIG: "serverName=Docker"
+    volumes:
+      - .:/www
+      - ./docker/php/php.ini:/usr/local/etc/php/conf.d/custom.ini:ro
+
+  nginx:
+    depends_on:
+      - php
+    image: nginx:latest
+    container_name: laravel_nginx
+    working_dir: /www
+    ports:
+      - 8080:80
+    volumes:
+      - .:/www
+      - ./docker/nginx:/etc/nginx/conf.d
+
+  db:
+    image: mysql:8
+    container_name: laravel_db
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+      - ./docker/mysql/init-dump:/docker-entrypoint-initdb.d
+      - ./docker/mysql/conf.d:/etc/mysql/conf.d
+    ports:
+      - 33060:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234567
