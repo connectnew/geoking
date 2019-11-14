@@ -7,9 +7,7 @@
                     <p>{{ iter.text }}</p>
                     <div class="d-flex">
                         <a class="btn-copy" @click="copySmart(iter.text)"><img src="/img/page.png" alt="page"/></a>
-                        <a class="btn-edit" v-if="auth_is_admin" target="_blank" v-bind:href="'/response/manage/'+iter.id"><i class="fa fa-pencil-square-o"></i></a>
-                        <a class="btn-del" v-if="auth_is_admin" @click="deleteSmart(iter.id)"><i class="fa fa-trash-o"></i></a>
-                        <button v-if="!auth" @click="selectSmart(iter)">SELECT</button>
+                        <button @click="selectSmart(iter)">SELECT</button>
                     </div>
                 </div>
             </div>
@@ -43,28 +41,10 @@
                 },
             }
         },
-        props: ['filter', 'auth', 'auth_is_admin'],
+        props: ['filter', 'show'],
         methods: {
             copySmart(text) {
                 this.$clipboard(text);
-            },
-            deleteSmart(id) {
-                if(confirm('Remove this smart response ?')){
-                    axios.post('/response/delete', { id : id })
-                        .then(response => {
-
-                            if(response.data.status == "ok"){
-                                this.getSmart();
-                            } else {
-                                console.log(response.data.message);
-                            }
-                        })
-                        .catch(error => {
-                            console.log(error);
-                        })
-                        .finally(() => {
-                        })
-                }
             },
             selectSmart(smart) {
                 this.$root.$emit('selectSmartResponse', smart);
@@ -147,35 +127,20 @@
             }
 
         },
+        watch: {
+            needRefresh: function(val) {
+                this.getSmart();
+            }
+        },
+        computed: {
+            needRefresh() {
+                return `${this.filter.category_id}|${this.filter.sector_id}|${this.filter.language_id}|${this.filter.positive}|${this.filter.search}`;
+            },
+        },
         mounted() {
-            this.$root.$on('filterSmartBySearch', (value) => {
-                this.filter.search = value;
-                if(this.smart.total){
-console.log('filterSmartBySearch 1');
-                    this.getSmart();
-                }
-            });
-            this.$root.$on('showSmartPaginate', (action) => {
-                if(action){
-                    this.getSmart();
-                    this.$root.$emit('allowSmartSearch', 1);
-                } else {
-                    this.smart = { total : 0 };
-                    this.filter.sector_id = null;
-                    this.filter.category_id = null;
-                    this.filter.language_id = null;
-                    this.filter.positive = null;
-                    this.filter.search = null;
-                    this.filter.page = 1;
-                    this.pagination = {
-                        page : {},
-                        page_current : 0,
-                        prev : { show : false, page : 0 },
-                        next : { show : false, page : 0 }
-                    };
-                    this.$root.$emit('allowSmartSearch', 0);
-                }
-            });
+
+            this.$root.$emit('allowSmartSearch', 0);
+            this.getSmart();
         }
     }
 

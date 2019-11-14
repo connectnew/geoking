@@ -10,7 +10,7 @@
                 Search for response
             </div>
             <form class="d-flex" onsubmit="return false;">
-                <input class="col" type="text" v-model="val_search" v-on:keyup.enter="keyEnter()" v-bind:disabled="disable"/>
+                <input class="col" type="text" v-model="search" v-on:keyup.enter="keyEnter()" v-bind:disabled="disable"/>
                 <button class="ml-auto" @click="searchSmart()" type="button">
                     <i class="fa fa-search"></i>
                 </button>
@@ -63,7 +63,7 @@
         name: 'SmartLayoutLeft',
         data() {
             return {
-                val_search: null,
+                search: null,
                 disable : true,
             }
         },
@@ -72,7 +72,7 @@
                 this.searchSmart();
             },
             searchSmart() {
-                this.$root.$emit('filterSmartBySearch', this.val_search);
+                this.$root.$emit('filterSmartBySearch', this.search);
             }
         },
         mounted() {
@@ -81,7 +81,7 @@
                     this.disable = false;
                 } else {
                     this.disable = true;
-                    this.val_search = null;
+                    this.search = null;
                 }
             });
         }

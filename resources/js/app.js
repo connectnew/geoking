@@ -20,8 +20,10 @@ window.Vue = require('vue');
 import { Bus } from './bus.js';
 
 import Vuelidate from 'vuelidate';
-import * as VueGoogleMaps from 'vue2-google-maps'
+import * as VueGoogleMaps from 'vue2-google-maps';
+import Clipboard from 'v-clipboard';
 
+Vue.use(Clipboard);
 Vue.use(Vuelidate);
 Vue.use(VueGoogleMaps, {
   load: {
@@ -72,13 +74,7 @@ Vue.component('review-reply-modal', require('./components/reviews/ReviewReplyMod
 // Smart Response
 Vue.component('manage-smart-response-modal', require('./components/reviews/smart/ManageModal.vue').default);
 Vue.component('smart-response-modal', require('./components/reviews/smart/ResponseModal.vue').default);
-Vue.component('vue-smart-layout-index', require('./components/reviews/smart/layout/Index.vue').default);
 Vue.component('vue-smart-layout-left', require('./components/reviews/smart/layout/Left.vue').default);
-Vue.component('vue-smart-layout-nav', require('./components/reviews/smart/layout/Nav.vue').default);
-Vue.component('vue-smart-tab-suggested', require('./components/reviews/smart/tab/Suggested.vue').default);
-Vue.component('vue-smart-tab-all', require('./components/reviews/smart/tab/All.vue').default);
-Vue.component('vue-smart-tab-sector', require('./components/reviews/smart/tab/Sector.vue').default);
-Vue.component('vue-smart-tab-category', require('./components/reviews/smart/tab/Category.vue').default);
 Vue.component('vue-smart-tab-paginate', require('./components/reviews/smart/tab/Paginate.vue').default);
 
 // User

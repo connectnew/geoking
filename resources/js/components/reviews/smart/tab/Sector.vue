@@ -1,8 +1,7 @@
 <template>
-    <div v-bind:style="show ? 'display: block;' : 'display: none;'">
+    <div>
         <div class="dropdowns2 d-flex justify-content-end">
             <a class="back" v-if="show_smart" @click="backSector()"><i class="fa fa-caret-left"></i> show all sectors</a>
-            <i class="fa fa-plus manage" v-if="auth" @click="showManage()"></i>
         </div>
         <div class="d-flex flex-wrap cards__items" v-if="!show_smart">
             <a class="col-md-4 link" @click="showSmart(sec.id)" v-for="sec in sector">
@@ -15,7 +14,7 @@
             </a>
         </div>
 
-        <vue-smart-tab-paginate v-bind:filter="filter" v-bind:auth="auth" v-bind:auth_is_admin="auth_is_admin"></vue-smart-tab-paginate>
+        <vue-smart-tab-paginate v-if="show_smart" v-bind:filter="filter"></vue-smart-tab-paginate>
     </div>
 </template>
 
@@ -27,9 +26,9 @@
                 show: false,
                 show_smart: false,
                 filter : {
-                    sector_id : null,
-                    category_id : null,
-                    language_id : null,
+                    sector_id : 0,
+                    category_id : 0,
+                    language_id : 0,
                     positive : null,
                     search : null,
                     per_page : 8,
@@ -37,32 +36,29 @@
                 },
             }
         },
-        props: ['sector', 'auth', 'auth_is_admin'],
-        methods: {
-            showManage() {
-                window.location.href = "/response/manage";
+        watch: {
+            needRefresh: function(val) {
+                this.filter.search = this.search;
+            }
+        },
+        computed: {
+            needRefresh() {
+                return `${this.search}`;
             },
+        },
+        props: ['sector', 'search'],
+        methods: {
             backSector() {
                 this.show_smart = false;
-                this.$root.$emit('showSmartPaginate', 0);
+                this.$root.$emit('allowSmartSearch', 0);
             },
             showSmart(id) {
                 this.show_smart = true;
                 this.filter.sector_id = id;
-                this.$root.$emit('showSmartPaginate', 1);
             }
         },
         mounted() {
-            this.$root.$on('showSmartSector', (action) => {
-                if(action){
-                    this.show = true;
-                    this.show_smart = false;
-                } else {
-                    this.show = false;
-                    this.show_smart = false;
-                    this.$root.$emit('showSmartPaginate', 0);
-                }
-            });
+            this.$root.$emit('allowSmartSearch', 0);
         }
     }
 </script>
